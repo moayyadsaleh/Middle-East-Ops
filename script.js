@@ -87,10 +87,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to handle state changes of the YouTube player
   function onPlayerStateChange(event) {
     // You can add additional logic here based on player state changes
-    // For example, you can detect when the video ends and take appropriate actions
+    // For example, you can detect when the video ends and get related videos
     if (event.data === YT.PlayerState.ENDED) {
-      // Video ended, you can perform additional actions
-      console.log("Video ended");
+      // Video ended, get related videos using YouTube Data API
+      const videoId = event.target.getVideoData().video_id;
+
+      // Make an API request to get related videos
+      fetch(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&type=video&key=YOUR_API_KEY`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          // Extract video IDs from the API response
+          const relatedVideoIds = data.items.map((item) => item.id.videoId);
+
+          // Display related videos or perform any other action
+          console.log("Related Videos:", relatedVideoIds);
+        })
+        .catch((error) =>
+          console.error("Error fetching related videos:", error)
+        );
     }
   }
 

@@ -126,13 +126,13 @@ video {
 }
 .youtube-container {
   position: relative;
-  width: 60%; /* Adjust container width as needed */
+  width: 100%; /* Adjust container width to fill the screen */
   height: 0;
-  padding-bottom: 40%; /* Adjust the percentage for a smaller video */
+  padding-bottom: 56.25%; /* Standard 16:9 aspect ratio for responsive videos */
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden; /* Hide any content that overflows the container */
-  border-radius: 15px; /* Adjust the pixel value for rounded corners */
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .youtube-container iframe {
@@ -143,6 +143,21 @@ video {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto; /* Center the video */
-  border-radius: 15px; /* Adjust the pixel value for rounded corners */
+  margin: auto;
+  border-radius: 15px;
+}
+/* Style for larger screens */
+@media only screen and (min-width: 769px) {
+  .youtube-container {
+    width: 60%; /* Adjust container width for larger screens */
+    padding-bottom: 40%; /* Adjust padding for 16:9 aspect ratio */
+  }
+}
+
+/* Style for smaller screens (including mobile) */
+@media only screen and (max-width: 768px) {
+  .youtube-container {
+    width: 100%; /* Full width on smaller screens */
+    padding-bottom: 56.25%; /* Standard 16:9 aspect ratio for responsive videos */
+  }
 }
