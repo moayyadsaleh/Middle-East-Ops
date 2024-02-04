@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap");
 body {
-  font-family: serif, sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
@@ -15,17 +16,19 @@ header {
 nav {
   background-color: #70002e;
   padding: 0.5em;
-  text-align: left; /* Align categories to the left by default */
+  text-align: left; /* Align the entire nav to the left */
 }
 
 nav a {
-  display: inline-block; /* Display categories in a row */
+  display: inline-table; /* Display categories in a row */
   color: white;
   text-decoration: none;
+  background-color: black;
   padding: 0.5em 1em;
   margin: 0.5em;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  text-align: left; /* Align the text within each link to the left */
 }
 
 nav a:hover {
