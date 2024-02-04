@@ -1,12 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   const categoriesContainer = document.getElementById("categories");
   const contentContainer = document.getElementById("content");
+  const spinner = document.getElementById("spinner"); // Add spinner reference
+
   let currentPlayer; // To store the current YouTube player instance
+
+  // Show spinner before fetching data
+  spinner.style.display = "block";
 
   // Fetch and load categories from data.json
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
+      // Hide spinner after fetching data
+      spinner.style.display = "none";
+
       // Populate categories
       data.categories.forEach((category, index) => {
         const categoryLink = document.createElement("a");
@@ -29,7 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
         showCategoryContent(initialCategory);
       }
     })
-    .catch((error) => console.error("Error fetching data:", error));
+    .catch((error) => {
+      // Hide spinner in case of an error
+      spinner.style.display = "none";
+      console.error("Error fetching data:", error);
+    });
 
   function showCategoryContent(category) {
     // Clear previous content
@@ -126,4 +138,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // YouTube API script is ready
     // You can add any additional logic here if needed
   };
+
+  // Function to scroll to the top
+  window.scrollToTop = function () {
+    document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Handle scroll events to show/hide the arrow based on scroll position
+  window.addEventListener("scroll", () => {
+    const scrollThreshold = 200; // Adjust this threshold as needed
+    const scrollArrow = document.querySelector(".scroll-arrow");
+    if (
+      document.body.scrollTop > scrollThreshold ||
+      document.documentElement.scrollTop > scrollThreshold
+    ) {
+      scrollArrow.style.display = "block";
+    } else {
+      scrollArrow.style.display = "none";
+    }
+  });
 });
