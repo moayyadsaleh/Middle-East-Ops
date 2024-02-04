@@ -172,3 +172,14 @@ video {
     padding-bottom: 56.25%; /* Standard 16:9 aspect ratio for responsive videos */
   }
 }
+.griz-logo {
+  position: absolute;
+  top: 10px; /* Adjust this value for the desired vertical position */
+  left: 10px; /* Adjust this value for the desired horizontal position */
+  max-width: 100px; /* Set the maximum width of the logo as needed */
+}
+@media only screen and (max-width: 600px) {
+  .griz-logo {
+    max-width: 50px; /* Adjust the size for smaller screens */
+  }
+}
