@@ -168,6 +168,7 @@ video {
 @media only screen and (max-width: 768px) {
   .youtube-container {
     width: 100%; /* Full width on smaller screens */
+    height: 100%;
     padding-bottom: 56.25%; /* Standard 16:9 aspect ratio for responsive videos */
   }
 }
