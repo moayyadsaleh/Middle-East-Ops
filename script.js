@@ -157,4 +157,34 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollArrow.style.display = "none";
     }
   });
+
+  // Function to prompt for password
+  window.promptForPassword = function () {
+    // Check if the user is already logged in
+    if (localStorage.getItem("loggedIn") === "true") {
+      // User is already logged in, show the content
+      document.getElementById("password-prompt").style.display = "none";
+      document.getElementById("content-wrapper").style.display = "block";
+    } else {
+      // Prompt for password input
+      var passwordInput = document.getElementById("passwordInput");
+      var password = passwordInput.value.trim();
+
+      // Check if the entered password is correct
+      if (password !== null && password.toLowerCase() === "dclcp2024") {
+        // Password is correct, set the loggedIn flag and show the content
+        localStorage.setItem("loggedIn", "true");
+        document.getElementById("password-prompt").style.display = "none";
+        document.getElementById("content-wrapper").style.display = "block";
+      } else {
+        // Incorrect password, show an alert
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  };
+
+  // Check for login status on page load
+  window.onload = function () {
+    promptForPassword();
+  };
 });

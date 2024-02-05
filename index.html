@@ -49,13 +49,15 @@
         src="https://live.staticflickr.com/65535/51262624119_07fb913283_z.jpg"
         alt="Special Ops Image"
       />
-      <form onsubmit="event.preventDefault(); promptForPassword();">
+      <form id="passwordForm">
         <input
           type="password"
           id="passwordInput"
           placeholder="Enter password"
         />
-        <button type="submit" id="passwordButton">Enter</button>
+        <button type="button" id="passwordButton" onclick="promptForPassword()">
+          Enter
+        </button>
       </form>
     </div>
 
