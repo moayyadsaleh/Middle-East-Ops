@@ -18,10 +18,10 @@
           document.getElementById("content-wrapper").style.display = "block";
         } else {
           // Prompt for password input
-          var password = prompt("Enter the password:");
+          var password = document.getElementById("passwordInput").value;
 
           // Check if the entered password is correct
-          if (password !== null && password.toLowerCase() === "dclcp2024") {
+          if (password.toLowerCase() === "dclcp2024") {
             // Password is correct, set the loggedIn flag and show the content
             localStorage.setItem("loggedIn", "true");
             document.getElementById("password-prompt").style.display = "none";
@@ -54,6 +54,7 @@
           type="password"
           id="passwordInput"
           placeholder="Enter password"
+          onkeydown="if (event.keyCode === 13) promptForPassword()"
         />
         <button type="button" id="passwordButton" onclick="promptForPassword()">
           Enter
