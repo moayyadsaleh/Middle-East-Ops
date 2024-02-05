@@ -237,7 +237,7 @@ video {
 
 /* Password Prompt Text Styling */
 .password-prompt p {
-  font-size: 24px;
+  font-size: 18px;
   background-color: #70002e;
   color: whitesmoke;
 }
