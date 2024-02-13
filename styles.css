@@ -7,14 +7,14 @@ body {
 }
 
 header {
-  background-color: #70002e;
+  background-color: green;
   color: white;
   text-align: center;
   padding: 1em;
 }
 
 nav {
-  background-color: #70002e;
+  background-color: green;
   padding: 0.5em;
   text-align: left; /* Align the entire nav to the left */
 }
@@ -63,7 +63,7 @@ header img {
   height: auto;
 }
 h2 {
-  color: #70002e;
+  color: green;
   text-align: center;
   margin-bottom: 1em;
   font-size: 1.5em; /* Adjust the font size */
@@ -106,7 +106,7 @@ video {
 }
 
 .selected-category {
-  border: 2px solid #70002e;
+  border: 2px solid green;
   padding: 1em;
   border-radius: 5px;
   background-color: #fff;
@@ -127,7 +127,7 @@ video {
 #content h3 {
   font-size: 1.5em;
   margin-top: 10px;
-  color: #70002e; /* Set the color to #70002e */
+  color: green; /* Set the color to  */
 }
 
 /* Style for video containers */
@@ -189,7 +189,7 @@ video {
   right: 15px;
   font-size: 13px;
   color: whitesmoke; /* Arrow color */
-  background-color: #70002e; /* Background color */
+  background-color: green; /* Background color */
   border: none;
   padding: 10px;
   border-radius: 40%; /* Smaller border-radius value */
@@ -238,7 +238,7 @@ video {
 /* Password Prompt Text Styling */
 .password-prompt p {
   font-size: 18px;
-  background-color: #70002e;
+  background-color: green;
   color: whitesmoke;
 }
 
@@ -266,7 +266,7 @@ video {
 /* Password Button Styling */
 #passwordButton {
   padding: 12px 24px; /* Increase padding for button */
-  background-color: #70002e;
+  background-color: green;
   color: white;
   border: none;
   border-radius: 4px;
